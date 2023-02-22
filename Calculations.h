@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
-#include <vector>
+#include<vector>
+#include<map>
 class Calculations {
 private:
 	float l_Side, r_Side, divisor = 0.f;
-	const int size = 3;
-
+	const int i_size = 3;
+	std::map<int, std::string> m_map;
 public:
+	std::string testString[2] = { "", " "};
 	/// <summary>
 	/// Default comnstructor for the Calculations class.
 	/// </summary>
@@ -35,9 +37,9 @@ public:
 	///Need to run through GoogleTest.
 	int dot_product(int vector_a[], int vector_b[]);
 
-	///Print out a vector of strings.
+	///Output a map of strings.
 	///Need to run through GoogleTest.
-	void outputStrings(std::string strings[]);
+	std::map<int, std::string> outputValues(int values[]);
 
 	/// Check for primes.
 	///Need to run through GoogleTest.

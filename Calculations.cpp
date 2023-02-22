@@ -1,5 +1,5 @@
 #include"Calculations.h"
-#include<vector>
+#include <string>
 
 ///Function for addition
 ///Need to check.
@@ -35,17 +35,21 @@ float Calculations::operator*(float l_Side) {
 ///Need to check. 
 int Calculations::dot_product(int vector_a[], int vector_b[]) {
     int product = 0;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < i_size; i++)
         product = product + vector_a[i] * vector_b[i];
     return product;
 }
 
-///Print out a vector of strings.
-///Need to check.
-void Calculations::outputStrings(std::string strings[]) {
-    for (int i = sizeof(strings); i > sizeof(strings) - 1; i--) {
-        strings[i];
+///Return a map.
+///Need to check the strings are correct.
+std::map<int, std::string> Calculations::outputValues(int value[]) {
+    for (int i = 0; i < (sizeof(value) / sizeof(*value)); i++) {
+        std::string s_map = "Value: " + std::to_string(i);
+        m_map.insert({ i,s_map });
+        std::cout << "Value  " << i << " " << value[i] << std::endl;
     }
+
+    return m_map;
 }
 
 bool Calculations::checkPrime(int n)

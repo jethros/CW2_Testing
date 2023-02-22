@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <string>
+#include <map>
 #include "Calculations.h"
 
 
@@ -15,10 +16,6 @@ class Testing :public ::testing::Test {
 protected:
     // You can remove any or all of the following functions if their bodies would
     // be empty.
-
-    std::string s;
-    bool t, b_Prime;
-    Calculations calc;
 
     Testing() {
  
@@ -38,7 +35,7 @@ protected:
     virtual void SetUp() override {
         // Code here will be called immediately after the constructor (right
         // before each test).
-
+        
     }
 
     virtual void TearDown() override {
@@ -48,3 +45,8 @@ protected:
 
 
 };
+
+TEST_F(Testing, test) {
+    EXPECT_TRUE(t);
+    EXPECT_FALSE(t);
+}
